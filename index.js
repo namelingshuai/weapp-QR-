@@ -1,14 +1,3 @@
-# weapp-QR
-# 结合别人的代码写出了一个小程序二维码生成,也就是在后台获取到字符串然后放到生成的二维码里面
-
-# 样式自己写就可以了
-
-# index.wxml
-```html
-<canvas style="width: 430rpx;height: 430rpx;" bindtap="previewImg" canvas-id="mycanvas"></canvas>
-```
-# index.js
-```javascript
 Page({
     data: {
 
@@ -76,28 +65,27 @@ Page({
         })
 
     },
-    // formSubmit: function (e) {
-    //     var that = this;
-    //     var url = e.detail.value.url;
-    //     that.setData({
-    //         maskHidden: false,
-    //     });
-    //     wx.showToast({
-    //         title: '生成中...',
-    //         icon: 'loading',
-    //         duration: 2000
-    //     });
-    //     var st = setTimeout(function () {
-    //         wx.hideToast()
-    //         var size = that.setCanvasSize();
-    //         //绘制二维码
-    //         that.createQrCode(url, "mycanvas", size.w, size.h);
-    //         that.setData({
-    //             maskHidden: true
-    //         });
-    //         clearTimeout(st);
-    //     }, 2000)
+    formSubmit: function (e) {
+        var that = this;
+        var url = e.detail.value.url;
+        that.setData({
+            maskHidden: false,
+        });
+        wx.showToast({
+            title: '生成中...',
+            icon: 'loading',
+            duration: 2000
+        });
+        var st = setTimeout(function () {
+            wx.hideToast()
+            var size = that.setCanvasSize();
+            //绘制二维码
+            that.createQrCode(url, "mycanvas", size.w, size.h);
+            that.setData({
+                maskHidden: true
+            });
+            clearTimeout(st);
+        }, 2000)
 
-    // },
+    },
 })
-```
