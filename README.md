@@ -3,6 +3,7 @@
 
 # 样式自己写就可以了
 
+
 # index.wxml
 ```html
 <canvas style="width: 430rpx;height: 430rpx;" bindtap="previewImg" canvas-id="mycanvas"></canvas>
