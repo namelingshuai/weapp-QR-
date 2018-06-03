@@ -1,3 +1,4 @@
+const QR = require("../../utils/qrcode.js")
 Page({
     data: {
 
